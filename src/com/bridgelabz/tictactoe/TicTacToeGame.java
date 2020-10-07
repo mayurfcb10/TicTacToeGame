@@ -11,15 +11,15 @@ public class TicTacToeGame {
 		}
 	}
 
-	public static int getInput() {
+	public static char getInput() {
 		Scanner input = new Scanner(System.in);
 		char givenInput = input.next().charAt(0);
 		if (givenInput == 'X' || givenInput == 'x') {
-			return 1;
+			return givenInput;
 		} else if (givenInput == 'O' || givenInput == 'o') {
-			return 2;
+			return givenInput;
 		}
-		return 3;
+		return 'N';
 	}
 
 	public static void main(String[] args) {
