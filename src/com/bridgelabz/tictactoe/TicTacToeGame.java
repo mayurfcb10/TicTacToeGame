@@ -27,14 +27,16 @@ public class TicTacToeGame {
 	}
 
 	// check Position
-	public static boolean checkPosition(char[] board, Scanner input) {
+	public static int checkPosition(char[] board, Scanner input) {
 		System.out.println("Enter the User Input");
 		int userInput = input.nextInt();
+		while(true) {
 			if (userInput > 0 && userInput < 10) {
 				if (board[userInput] == ' ')
-				return true;
+					return userInput;
+	
 			}
-		return false;
+		}
 	}
 
 	public static void main(String[] args) {
@@ -44,8 +46,8 @@ public class TicTacToeGame {
 		char[] board = createBoard();
 		getInput((getInput(givenInput) == 'X' ? 'O' : 'X'));
 		displayBoard(board);
-		boolean isEmpty = checkPosition(board, input);
-		if (isEmpty) {
+		int isEmptyIndex = checkPosition(board, input);
+		if(isEmptyIndex > 0 && isEmptyIndex < 10) {
 			displayBoard(board);
 		}
 	}
