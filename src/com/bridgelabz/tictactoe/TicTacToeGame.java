@@ -26,7 +26,7 @@ public class TicTacToeGame {
 	// display the board
 	public static void displayBoard(char[] board) {
 		for (int position = 0; position < board.length; position++) {
-			System.out.println(board[position] + " ");
+			System.out.print(board[position] + " ");
 		}
 	}
 
